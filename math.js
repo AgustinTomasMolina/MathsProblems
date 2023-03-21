@@ -21,17 +21,24 @@ function trianguloEscaleno(lado1, lado2, lado3) {
     let c = lado3;
 
     if (a == b || b == c || c == a) {
-        return console.log("lados iguales")           // se genera la validacion
+        return console.log("lados iguales")        // se genera la validacion, si hay alguno igual al otro no se continua.
     }
-    // ESTE CALCULO ES PARA SACAR EL AREA
+
+    // semiperímetro es la semisuma de todos los lados de una figura plana.
     let s = (a + b + c) / 2;
+
+    // La fórmula de Herón: la raíz cuadrada del producto del semiperímetro por la diferencia del semiperímetro
+    // y la longitud de cada lado del triángulo escaleno.
     let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
 
-
-    let altura_a = Math.floor(2 * area / a);
+    // USAMOS QUE A = BH/2, POR LO QUE H = 2A/B
+    // Math.floor devuelve el maximo entero menor o igual a un numero osea redondea.
+    let altura_a = Math.floor(2 * area / a); 
     let altura_b = Math.floor(2 * area / b);
     let altura_c = Math.floor(2 * area / c);
 
+
+    // SE BUSCA LA ALTURA RESPECTO A 'a' COMO BASE.
     return console.log(altura_a)
 }
 
